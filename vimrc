@@ -74,7 +74,8 @@ set laststatus=2
 "set statusline=%t\ %y\ format:\ %{&ff};\ [%l,%c]
 
 " Fancy Powerlines
-let g:Powerline_symbols = 'unicode'
+"let g:Powerline_symbols = 'unicode'
+let g:Powerline_symbols = 'fancy'
 
 " PHPDoc for Vim: PDV
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
@@ -97,7 +98,6 @@ au BufRead,BufNewFile *.thtml   set filetype=php
 au BufRead,BufNewFile *.ctp     set filetype=php
 
 " Default color scheme
-" set guifont=Bitstream\ Vera\ Sans\ Mono:h12
 highlight Comment ctermfg=darkcyan
 highlight Search term=reverse ctermbg=4 ctermfg=7
 "let g:solarized_visibility='medium'
