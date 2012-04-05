@@ -3,7 +3,8 @@
 #
 help:
 	@echo "install - install + compile native things."
-	@echo "update  - Download update for all plugins."
+	@echo "symlink - make symlink to .vimrc"
+	@echo "commandt - compile Command-T"
 
 install: symlink commandt
 
