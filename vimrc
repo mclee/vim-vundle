@@ -61,6 +61,7 @@ set autoindent
 
 " Window settings
 set wrap
+set cursorline
 
 " set folding
 set foldmethod=syntax
