@@ -47,7 +47,7 @@ set tenc=utf-8
 set ruler
 set cindent
 set incsearch
-set hightlightsearch
+set hls
 set t_Co=256
 
 
