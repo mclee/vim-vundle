@@ -24,6 +24,7 @@ Bundle 'tpope/vim-git'
 Bundle 'Townk/vim-autoclose'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'wincent/Command-T'
 Bundle 'othree/html5.vim'
@@ -31,6 +32,13 @@ Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Bundle 'janx/vim-rubytest'
 Bundle 'noahfrederick/Hemisu'
+"Bundle 'skwp/vim-ruby-conque' "Requires conque
+" These two are for snipmates
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+
+Bundle 'honza/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
 
 
 " Auto NERDTree on startup
@@ -45,11 +53,17 @@ set fileencoding=utf-8
 set encoding=utf-8
 set tenc=utf-8
 set ruler
-set cindent
 set incsearch
-set hls
+set hlsearch
 set t_Co=256
-
+set hidden " hide buffers, not close
+set backspace=indent,eol,start
+set autoindent
+set cindent
+set copyindent
+set showmatch
+set history=200
+set undolevels=200
 
 " Whitespace stuff
 set tabstop=4
@@ -57,11 +71,16 @@ set shiftwidth=4
 set softtabstop=4
 "set list listchars=tab:▸\ ,eol:¬,trail:·
 set noeol
-set autoindent
+set shiftround
+set smarttab
 
 " Window settings
 set wrap
+set lbr
 set cursorline
+set title
+"set visualbell
+"set noerrorbells
 
 " set folding
 set foldmethod=syntax
@@ -115,8 +134,8 @@ set nobackup
 set nowritebackup
 
 " Persistent undos
-set undodir=~/.vim/backup
-set undofile
+"set undodir=~/.vim/backup
+"set undofile
 
 " Autocompletes
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
