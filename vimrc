@@ -46,6 +46,7 @@ Bundle 'garbas/vim-snipmate'
 
 " Toggle NERDTree with \n
 map <Leader>n :NERDTreeToggle<CR>
+map <F3> :NERDTreeToggle<CR>
 
 syntax on
 set fileencodings=utf-8
@@ -64,6 +65,7 @@ set copyindent
 set showmatch
 set history=200
 set undolevels=200
+set pastetoggle=<F2>
 
 " Whitespace stuff
 set tabstop=4
@@ -112,9 +114,6 @@ let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
 map <Leader>\ <Plug>RubyTestRun
 
 " Filetypes
-au BufRead,BufNewFile *.ros     set filetype=php
-au BufRead,BufNewFile *.tt2     set filetype=tt2
-au BufRead,BufNewFile *.thtml   set filetype=php
 au BufRead,BufNewFile *.ctp     set filetype=php
 
 " Default color scheme
