@@ -47,6 +47,8 @@ Bundle 'garbas/vim-snipmate'
 " Toggle NERDTree with \n
 map <Leader>n :NERDTreeToggle<CR>
 map <F3> :NERDTreeToggle<CR>
+map <F8> :%!xxd<CR>
+map <F9> :%!xxd -r<CR>
 
 syntax on
 set fileencodings=utf-8
