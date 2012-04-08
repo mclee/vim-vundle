@@ -33,12 +33,15 @@ Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Bundle 'janx/vim-rubytest'
 Bundle 'noahfrederick/Hemisu'
 "Bundle 'skwp/vim-ruby-conque' "Requires conque
+
 " These two are for snipmates
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
 Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kien/tabman.vim'
 
 
 " Auto NERDTree on startup
@@ -47,6 +50,7 @@ Bundle 'garbas/vim-snipmate'
 " Toggle NERDTree with \n
 map <Leader>n :NERDTreeToggle<CR>
 map <F3> :NERDTreeToggle<CR>
+" Toggle Hex editing
 map <F8> :%!xxd<CR>
 map <F9> :%!xxd -r<CR>
 
@@ -102,9 +106,9 @@ set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
 " PHPDoc for Vim: PDV
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
+inoremap <C-G> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-G> :call PhpDocSingle()<CR>
+vnoremap <C-G> :call PhpDocRange()<CR>
 
 " Ctrl-Q to toggle Taglist
 nnoremap <C-Q> :TlistToggle<CR>
@@ -114,6 +118,15 @@ let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
 
 " RubyTest - change from <Leader>t to <Leader>\
 map <Leader>\ <Plug>RubyTestRun
+
+"ctrlp
+let g:ctrlp_map = '<c-p>'
+
+" Tabman
+let g:tabman_toggle = '<leader>mt'
+let g:tabman_focus  = '<leader>mf'
+let g:tabman_width = 25
+let g:tabman_side = 'left'
 
 " Filetypes
 au BufRead,BufNewFile *.ctp     set filetype=php

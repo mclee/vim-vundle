@@ -9,7 +9,7 @@ help:
 install: symlink commandt
 
 commandt:
-	cd bundle/command-t/ruby/command-t/;\
+	cd bundle/Command-T/ruby/command-t/;\
 		/usr/bin/ruby extconf.rb;\
 		make clean && make
 
