@@ -42,6 +42,7 @@ Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/tabman.vim'
+Bundle 'vim-scripts/nginx.vim'
 
 
 " Auto NERDTree on startup
@@ -130,6 +131,7 @@ let g:tabman_side = 'left'
 
 " Filetypes
 au BufRead,BufNewFile *.ctp     set filetype=php
+au BufRead,BufNewFile /etc/nginx/*	set		ft=nginx
 
 " Default color scheme
 highlight Comment ctermfg=darkcyan
