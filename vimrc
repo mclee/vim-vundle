@@ -43,6 +43,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/tabman.vim'
 Bundle 'vim-scripts/nginx.vim'
+Bundle 'mattn/zencoding-vim'
 
 
 " Auto NERDTree on startup
