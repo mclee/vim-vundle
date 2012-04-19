@@ -63,6 +63,7 @@ set fileencoding=utf-8
 set encoding=utf-8
 set tenc=utf-8
 set ruler
+set number
 set incsearch
 set hlsearch
 set t_Co=256
@@ -95,7 +96,7 @@ set title
 
 " set folding
 set foldmethod=syntax
-set foldnestmax=3
+set foldnestmax=2
 set foldlevel=1
 let ruby_fold = 1
 let php_folding = 1
@@ -142,7 +143,7 @@ highlight Search term=reverse ctermbg=4 ctermfg=7
 "let g:solarized_contrast='normal'
 set background=dark
 "colorscheme solarized
-"colorscheme vividchalk 
+colorscheme vividchalk
 "colorscheme hemisu
 
 " Swap files. Generally things are in version control
