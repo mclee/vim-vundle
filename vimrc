@@ -56,6 +56,13 @@ map <F3> :NERDTreeToggle<CR>
 " Toggle Hex editing
 map <F8> :%!xxd<CR>
 map <F9> :%!xxd -r<CR>
+" vim-rails
+map <Leader>rp :Rextract 
+map <Leader>rm :Rmodel<CR>
+map <Leader>rc :Rcontroller<CR>
+map <Leader>rv :Rview<CR>
+map <Leader>ra :A<CR>
+map <Leader>rr :R<CR>
 
 syntax on
 set fileencodings=utf-8
