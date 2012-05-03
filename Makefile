@@ -2,11 +2,12 @@
 #
 #
 help:
+	@echo "vundle - install vundle"
 	@echo "install - install + compile native things."
 	@echo "symlink - make symlink to .vimrc"
 	@echo "commandt - compile Command-T"
 
-install: symlink commandt
+install: vundle symlink commandt
 
 commandt:
 	cd bundle/Command-T/ruby/command-t/;\
@@ -15,3 +16,6 @@ commandt:
 
 symlink:
 	ln -sf ~+/vimrc ~/.vimrc
+
+vundle:
+	git clone https://github.com/gmarik/vundle.git bundle/vundle
