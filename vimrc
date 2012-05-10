@@ -167,7 +167,10 @@ set nowritebackup
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType js set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType rb set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 " {{{ Filetypes
 "
