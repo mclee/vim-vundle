@@ -32,6 +32,7 @@ Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Bundle 'janx/vim-rubytest'
 Bundle 'noahfrederick/Hemisu'
+Bundle 'ap/vim-css-color'
 "Bundle 'skwp/vim-ruby-conque' "Requires conque
 
 " These two are for snipmates
