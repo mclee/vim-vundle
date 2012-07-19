@@ -64,6 +64,10 @@ map <Leader>rc :Rcontroller<CR>
 map <Leader>rv :Rview<CR>
 map <Leader>ra :A<CR>
 map <Leader>rr :R<CR>
+" Refresh Commmand-T cache
+map <Leader>ct :CommandTFlush<CR>
+" Clear CtrlP cache
+map <Leader>cp :CtrlPClearAllCaches<CR>
 
 syntax on
 set fileencodings=utf-8
