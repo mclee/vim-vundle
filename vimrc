@@ -121,6 +121,9 @@ set laststatus=2
 "let g:Powerline_symbols = 'unicode'
 let g:Powerline_symbols = 'fancy'
 
+" ruby path if you are using RVM
+let g:ruby_path = system('rvm current')
+
 " PHPDoc for Vim: PDV
 inoremap <C-G> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-G> :call PhpDocSingle()<CR>
