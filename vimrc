@@ -33,6 +33,7 @@ Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Bundle 'janx/vim-rubytest'
 Bundle 'noahfrederick/Hemisu'
 Bundle 'ap/vim-css-color'
+Bundle 'vim-scripts/matchit.zip'
 "Bundle 'skwp/vim-ruby-conque' "Requires conque
 
 " These two are for snipmates
