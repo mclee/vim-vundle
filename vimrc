@@ -47,6 +47,7 @@ Bundle 'kien/tabman.vim'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-bundler'
+Bundle 'airblade/vim-gitgutter'
 
 
 " Auto NERDTree on startup
