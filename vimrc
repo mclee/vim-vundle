@@ -48,6 +48,7 @@ Bundle 'vim-scripts/nginx.vim'
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-bundler'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'Yggdroot/indentLine'
 
 
 " Auto NERDTree on startup
