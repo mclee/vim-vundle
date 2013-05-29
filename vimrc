@@ -40,7 +40,7 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/tabman.vim'
@@ -49,6 +49,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-bundler'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
+Bundle 'mileszs/ack.vim'
 
 
 " Auto NERDTree on startup
