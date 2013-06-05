@@ -1,3 +1,7 @@
 ## Vim config
 
 This is my vim config, use at your own risk.
+
+to install:
+
+		curl -L http://raw.github.com/mclee/vim-vundle/master/install.sh | sh

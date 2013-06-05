@@ -15,7 +15,7 @@ commandt:
 		make clean && make
 
 symlink:
-	ln -sf ~+/vimrc ~/.vimrc
+	ln -sf `pwd`/vimrc ~/.vimrc
 
 vundle:
 	git clone https://github.com/gmarik/vundle.git bundle/vundle
