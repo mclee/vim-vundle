@@ -209,7 +209,7 @@ au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expand
 au FileType rst setl textwidth=80
 
 " Make ruby use 2 spaces for indentation.
-au FileType ruby setl softtabstop=2 tabstop=2 expandtab
+au FileType ruby setl softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " PHP settings
 au FileType php setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 noexpandtab
