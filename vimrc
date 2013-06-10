@@ -126,7 +126,8 @@ set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
 " ruby path if you are using RVM
-let g:ruby_path = system('rvm current')
+" let g:ruby_path = system('rvm current')
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
 " PHPDoc for Vim: PDV
 inoremap <C-G> <ESC>:call PhpDocSingle()<CR>i
