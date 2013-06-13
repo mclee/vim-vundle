@@ -1,5 +1,5 @@
 #!/bin/sh
-DEST="~/.vim"
+DEST="$HOME/.vim"
 MACHINE=`uname`
 
 git clone https://github.com/mclee/vim-vundle.git $DEST
