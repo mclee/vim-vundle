@@ -58,6 +58,9 @@ Bundle 'mileszs/ack.vim'
 " Toggle NERDTree with \n
 map <Leader>n :NERDTreeToggle<CR>
 map <F3> :NERDTreeToggle<CR>
+" Tabman
+map <F4> :TMToggle<CR>
+map <F5> :TMFocus<CR>
 " Toggle Hex editing
 map <F8> :%!xxd<CR>
 map <F9> :%!xxd -r<CR>
