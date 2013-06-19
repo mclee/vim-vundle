@@ -155,6 +155,9 @@ let g:tabman_focus  = '<leader>mf'
 let g:tabman_width = 25
 let g:tabman_side = 'left'
 
+" Gitgutter
+let g:gitgutter_eager = 0
+
 " Filetypes
 au BufRead,BufNewFile *.ctp     set filetype=php
 au BufRead,BufNewFile /etc/nginx/*	set		ft=nginx
