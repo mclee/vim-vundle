@@ -41,8 +41,8 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
-Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/tabman.vim'
 Bundle 'vim-scripts/nginx.vim'
@@ -52,6 +52,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
+Bundle 'Shougo/neocomplete.vim'
 
 
 " Auto NERDTree on startup
@@ -159,6 +160,16 @@ nnoremap <C-Q> :TlistToggle<CR>
 
 " Supertabs
 let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
+
+" NeoComplete
+" disable AutoComplPop
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 
 " RubyTest - change from <Leader>t to <Leader>\
 map <Leader>\ <Plug>RubyTestRun
