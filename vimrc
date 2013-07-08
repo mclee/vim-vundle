@@ -51,6 +51,7 @@ Bundle 'tpope/vim-bundler'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
 Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 
 
 " Auto NERDTree on startup
