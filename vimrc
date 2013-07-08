@@ -128,6 +128,16 @@ set laststatus=2
 "let g:Powerline_symbols = 'unicode'
 let g:Powerline_symbols = 'fancy'
 
+" fix powerline lag: https://powerline.readthedocs.org/en/latest/tipstricks.html
+if ! has('gui_running')
+	set ttimeoutlen=10
+	augroup FastEscape
+		autocmd!
+		au InsertEnter * set timeoutlen=0
+		au InsertLeave * set timeoutlen=1000
+	augroup END
+endif
+
 " ruby path if you are using RVM
 " let g:ruby_path = system('rvm current')
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
@@ -161,6 +171,7 @@ let g:gitgutter_eager = 0
 " Filetypes
 au BufRead,BufNewFile *.ctp     set filetype=php
 au BufRead,BufNewFile /etc/nginx/*	set		ft=nginx
+au BufRead,BufNewFile /usr/local/nginx/conf/*	set		ft=nginx
 
 " Default color scheme
 highlight Comment ctermfg=darkcyan
