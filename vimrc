@@ -22,7 +22,8 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-git'
 Bundle 'Townk/vim-autoclose'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
@@ -137,6 +138,11 @@ if ! has('gui_running')
 		au InsertLeave * set timeoutlen=1000
 	augroup END
 endif
+
+" let airline use powerline fancy fonts
+let g:airline_powerline_fonts=1
+let g:airline_theme='dark'
+
 
 " ruby path if you are using RVM
 " let g:ruby_path = system('rvm current')
