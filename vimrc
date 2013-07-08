@@ -46,6 +46,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
+Bundle 'terryma/vim-multiple-cursors'
 
 
 " Auto NERDTree on startup
