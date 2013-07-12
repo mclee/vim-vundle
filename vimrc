@@ -34,7 +34,11 @@ Bundle 'janx/vim-rubytest'
 Bundle 'noahfrederick/Hemisu'
 Bundle 'ap/vim-css-color'
 Bundle 'vim-scripts/matchit.zip'
-Bundle 'Shougo/neocomplete.vim'
+if has("lua")
+	Bundle 'Shougo/neocomplete.vim'
+else
+	Bundle 'Shougo/neocomplcache.vim'
+endif
 Bundle 'Shougo/neosnippet'
 Bundle 'honza/vim-snippets'
 Bundle 'kien/ctrlp.vim'
@@ -155,14 +159,24 @@ nnoremap <C-Q> :TlistToggle<CR>
 " Supertabs
 "let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
 
-" NeoComplete
-" disable AutoComplPop
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+if has("lua")
+	" NeoComplete
+	" disable AutoComplPop
+	let g:acp_enableAtStartup = 0
+	let g:neocomplete#enable_at_startup = 1
+	let g:neocomplete#enable_smart_case = 1
+	let g:neocomplete#sources#syntax#min_keyword_length = 3
+	let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+	inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+else
+	" Use neocomplcache.
+	let g:acp_enableAtStartup = 0
+	let g:neocomplcache_enable_at_startup = 1
+	let g:neocomplcache_enable_smart_case = 1
+	let g:neocomplcache_min_syntax_length = 3
+	let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+	inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+endif
 
 
 " RubyTest - change from <Leader>t to <Leader>\
