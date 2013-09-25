@@ -266,6 +266,9 @@ au BufRead,BufNewFile *.coffee  set ft=coffee
 " Highlight JSON like Javascript
 au BufNewFile,BufRead *.json set ft=javascript
 
+" Make eruby filetype also html
+au BufNewFile,BufRead *.erb set ft=eruby.html
+
 " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab
 au FileType rst setl textwidth=80
