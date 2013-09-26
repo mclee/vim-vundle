@@ -195,7 +195,7 @@ let g:tabman_side = 'left'
 let g:gitgutter_eager = 0
 
 " Filetypes
-au BufRead,BufNewFile *.ctp     set filetype=php
+au BufRead,BufNewFile *.ctp     set filetype=php.html
 au BufRead,BufNewFile /etc/nginx/*	set		ft=nginx
 au BufRead,BufNewFile /usr/local/nginx/conf/*	set		ft=nginx
 
