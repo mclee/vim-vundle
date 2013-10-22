@@ -168,6 +168,8 @@ if has("lua")
 	let g:neocomplete#sources#syntax#min_keyword_length = 3
 	let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 	inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+	let g:neocomplete#enable_prefetch = 1  " to keep the cursor from poping menus
+	let g:neocomplete#force_overwrite_completefunc = 1 " prevent vim-rails to overwrite, https://github.com/tpope/vim-rails/issues/283
 else
 	" Use neocomplcache.
 	let g:acp_enableAtStartup = 0
