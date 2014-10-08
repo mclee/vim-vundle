@@ -52,6 +52,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'moll/vim-node'
+Bundle 'skalnik/vim-vroom'
+"Bundle 'thoughtbot/vim-rspec'
 
 
 " Auto NERDTree on startup
@@ -77,6 +79,12 @@ map <Leader>rr :R<CR>
 map <Leader>ct :CommandTFlush<CR>
 " Clear CtrlP cache
 map <Leader>cp :CtrlPClearAllCaches<CR>
+
+" Rspec.vim mappings
+"map <Leader>r :call RunCurrentSpecFile()<CR>
+"map <Leader>rn :call RunNearestSpec()<CR>
+"map <Leader>rl :call RunLastSpec()<CR>
+"map <Leader>ra :call RunAllSpecs()<CR>
 
 syntax on
 set fileencodings=utf-8
