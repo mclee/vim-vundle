@@ -27,7 +27,6 @@ Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-Bundle 'wincent/Command-T'
 Bundle 'othree/html5.vim'
 Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Bundle 'janx/vim-rubytest'
@@ -75,8 +74,7 @@ map <Leader>rc :Rcontroller<CR>
 map <Leader>rv :Rview<CR>
 map <Leader>ra :A<CR>
 map <Leader>rr :R<CR>
-" Refresh Commmand-T cache
-map <Leader>ct :CommandTFlush<CR>
+map <Leader>t :CtrlP<CR>
 " Clear CtrlP cache
 map <Leader>cp :CtrlPClearAllCaches<CR>
 
