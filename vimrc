@@ -77,6 +77,7 @@ map <Leader>rr :R<CR>
 map <Leader>t :CtrlP<CR>
 " Clear CtrlP cache
 map <Leader>cp :CtrlPClearAllCaches<CR>
+map <Leader>ct :CtrlPClearAllCaches<CR>
 
 " Rspec.vim mappings
 "map <Leader>r :call RunCurrentSpecFile()<CR>
