@@ -71,9 +71,9 @@ map <F8> :%!xxd<CR>
 map <F9> :%!xxd -r<CR>
 " vim-rails
 map <Leader>rp :Rextract 
-map <Leader>rm :Rmodel<CR>
-map <Leader>rc :Rcontroller<CR>
-map <Leader>rv :Rview<CR>
+map <Leader>rm :Emodel<CR>
+map <Leader>rc :Econtroller<CR>
+map <Leader>rv :Eview<CR>
 map <Leader>ra :A<CR>
 map <Leader>rr :R<CR>
 map <Leader>t :CtrlP<CR>
