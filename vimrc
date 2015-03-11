@@ -33,13 +33,21 @@ Plugin 'janx/vim-rubytest'
 Plugin 'noahfrederick/Hemisu'
 Plugin 'ap/vim-css-color'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'ervandew/supertab'
 if has("lua")
 	Plugin 'Shougo/neocomplete.vim'
 else
 	Plugin 'Shougo/neocomplcache.vim'
 endif
-Plugin 'Shougo/neosnippet'
+" I found neosnippet not quite used to as vim-snipmate
+"Plugin 'Shougo/neosnippet.vim'
+
+" For vim-snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+
 Plugin 'kien/ctrlp.vim'
 Plugin 'kien/tabman.vim'
 Plugin 'vim-scripts/nginx.vim'
@@ -167,7 +175,7 @@ vnoremap <C-G> :call PhpDocRange()<CR>
 nnoremap <C-Q> :TlistToggle<CR>
 
 " Supertabs
-"let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
+let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
 
 if has("lua")
 	" NeoComplete
@@ -232,17 +240,6 @@ set nowritebackup
 let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
 
 
 " Persistent undos
