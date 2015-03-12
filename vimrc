@@ -175,12 +175,16 @@ vnoremap <C-G> :call PhpDocRange()<CR>
 nnoremap <C-Q> :TlistToggle<CR>
 
 " Supertabs
-let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
+"let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
+
+" Neocomplete & neocomplcache
 
 if has("lua")
 	" NeoComplete
 	" disable AutoComplPop
 	let g:acp_enableAtStartup = 0
+	let g:neocomplete#disable_auto_complete = 0
+	let g:neocomplete#enable_auto_select = 0
 	let g:neocomplete#enable_at_startup = 1
 	let g:neocomplete#enable_smart_case = 1
 	let g:neocomplete#sources#syntax#min_keyword_length = 3
@@ -188,14 +192,40 @@ if has("lua")
 	inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 	let g:neocomplete#enable_prefetch = 1  " to keep the cursor from poping menus
 	let g:neocomplete#force_overwrite_completefunc = 1 " prevent vim-rails to overwrite, https://github.com/tpope/vim-rails/issues/283
+
+	"<CR>: close popup and save indent.
+	inoremap <expr><CR>  neocomplete#smart_close_popup() . "\<CR>"
+	"<TAB>: completion. NO USE with snipmate
+	"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+	"<C-h>, <BS>: close popup and delete backword char.
+	inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+	inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+	inoremap <expr><C-Y>  neocomplete#close_popup()
+	inoremap <expr><C-e>  neocomplete#cancel_popup()
+	"inoremap <expr><Enter>  pumvisible() ? neocomplcache#close_popup()."\<C-n>" : "\<Enter>"
+	inoremap <expr><Enter>  pumvisible() ? "\<C-Y>" : "\<Enter>"
 else
 	" Use neocomplcache.
 	let g:acp_enableAtStartup = 0
+	let g:neocomplcache_disable_auto_complete = 0
+	let g:neocomplcache_enable_auto_select = 0
 	let g:neocomplcache_enable_at_startup = 1
 	let g:neocomplcache_enable_smart_case = 1
 	let g:neocomplcache_min_syntax_length = 3
 	let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 	inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+	"<CR>: close popup and save indent.
+	inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+	"<TAB>: completion. NO USE with snipmate
+	"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"      ********************
+	"<C-h>, <BS>: close popup and delete backword char.
+	inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+	inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+	inoremap <expr><C-Y>  neocomplcache#close_popup()
+	inoremap <expr><C-e>  neocomplcache#cancel_popup()
+	"inoremap <expr><Enter>  pumvisible() ? neocomplcache#close_popup()."\<C-n>" : "\<Enter>"
+	inoremap <expr><Enter>  pumvisible() ? "\<C-Y>" : "\<Enter>"   ********************
 endif
 
 
