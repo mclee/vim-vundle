@@ -48,7 +48,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kien/tabman.vim'
 Plugin 'vim-scripts/nginx.vim'
 Plugin 'mattn/emmet-vim'
