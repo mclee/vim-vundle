@@ -63,6 +63,10 @@ Plugin 'skalnik/vim-vroom'
 "Plugin 'thoughtbot/vim-rspec'
 Plugin 'fatih/vim-go'
 
+"Python related stuff
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'klen/python-mode'
+
 call vundle#end()
 
 " Auto NERDTree on startup
@@ -329,7 +333,8 @@ au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.erb set ft=eruby.html
 
 " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab
+" au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab
+au FileType python setl softtabstop=0 noexpandtab shiftwidth=4 textwidth=90
 au FileType rst setl textwidth=80
 
 " Make ruby use 2 spaces for indentation.
