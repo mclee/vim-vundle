@@ -263,6 +263,9 @@ map <Leader>\ <Plug>RubyTestRun
 
 "ctrlp
 let g:ctrlp_map = '<c-p>'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_max_files=50000
 
 " Tabman
 let g:tabman_toggle = '<leader>mt'
