@@ -10,7 +10,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
-Plugin 'wycats/nerdtree'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-scripts/taglist.vim'
@@ -66,6 +68,9 @@ Plugin 'fatih/vim-go'
 "Python related stuff
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'klen/python-mode'
+
+"JXML
+Plugin 'git@github.com:zopim/vim-jxml.git'
 
 call vundle#end()
 
