@@ -68,7 +68,7 @@ Plugin 'fatih/vim-go'
 
 "Python related stuff
 Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 
 "JXML
 Plugin 'git@github.com:zopim/vim-jxml.git'
@@ -268,6 +268,15 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_clear_cache_on_exit = 0
+if executable('ag')
+  "Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  "Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " Tabman
 let g:tabman_toggle = '<leader>mt'
