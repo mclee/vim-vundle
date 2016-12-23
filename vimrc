@@ -11,6 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tpope/vim-vividchalk'
@@ -72,6 +73,10 @@ Plugin 'hynek/vim-python-pep8-indent'
 
 "JXML
 Plugin 'git@github.com:zopim/vim-jxml.git'
+
+"PR Reviews
+Bundle 'junkblocker/patchreview-vim'
+Bundle 'codegram/vim-codereview'
 
 call vundle#end()
 
