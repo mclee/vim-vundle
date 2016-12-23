@@ -269,7 +269,7 @@ map <Leader>\ <Plug>RubyTestRun
 
 "ctrlp
 let g:ctrlp_map = '<c-p>'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=100
