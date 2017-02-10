@@ -29,7 +29,7 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'othree/html5.vim'
 Plugin 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Plugin 'janx/vim-rubytest'
@@ -69,14 +69,14 @@ Plugin 'fatih/vim-go'
 
 "Python related stuff
 Plugin 'hynek/vim-python-pep8-indent'
-"Plugin 'klen/python-mode'
+Plugin 'klen/python-mode'
 
 "JXML
 Plugin 'git@github.com:zopim/vim-jxml.git'
 
 "PR Reviews
-Bundle 'junkblocker/patchreview-vim'
-Bundle 'codegram/vim-codereview'
+Plugin 'junkblocker/patchreview-vim'
+Plugin 'codegram/vim-codereview'
 
 call vundle#end()
 
@@ -202,6 +202,10 @@ nnoremap <C-Q> :TlistToggle<CR>
 
 " Supertabs
 "let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
+
+
+" Syntastic
+"let g:syntastic_python_checkers = ['pylint']
 
 " Neocomplete & neocomplcache
 
@@ -363,8 +367,8 @@ au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.erb set ft=eruby.html
 
 " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-" au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab
-au FileType python setl softtabstop=0 noexpandtab shiftwidth=4 textwidth=90
+au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab
+"au FileType python setl softtabstop=0 noexpandtab shiftwidth=4 textwidth=90
 au FileType rst setl textwidth=80
 
 " Make ruby use 2 spaces for indentation.
