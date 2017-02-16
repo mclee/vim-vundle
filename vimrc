@@ -68,7 +68,7 @@ Plugin 'skalnik/vim-vroom'
 Plugin 'fatih/vim-go'
 
 "Python related stuff
-Plugin 'hynek/vim-python-pep8-indent'
+"Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'klen/python-mode'
 
 "JXML
@@ -206,6 +206,7 @@ nnoremap <C-Q> :TlistToggle<CR>
 
 " Syntastic
 "let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128'
 
 " Neocomplete & neocomplcache
 
@@ -329,6 +330,9 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
+" python-mode
+let g:pymode_lint_ignore = 'W191,E101,E127,E128'
+map <Leader>pl :PymodeLint<CR>
 
 " Persistent undos
 "set undodir=~/.vim/backup
@@ -366,9 +370,11 @@ au BufNewFile,BufRead *.json set ft=javascript
 " Make eruby filetype also html
 au BufNewFile,BufRead *.erb set ft=eruby.html
 
+" Map *.py to python type
+au BufNewFile,BufRead *.py set ft=python
 " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab
-"au FileType python setl softtabstop=0 noexpandtab shiftwidth=4 textwidth=90
+"au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab
+au FileType python setl softtabstop=0 noexpandtab shiftwidth=4 textwidth=90
 au FileType rst setl textwidth=80
 
 " Make ruby use 2 spaces for indentation.
