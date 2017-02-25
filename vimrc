@@ -26,7 +26,8 @@ Plugin 'tpope/vim-haml'
 Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-git'
 Plugin 'Townk/vim-autoclose'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
@@ -36,19 +37,19 @@ Plugin 'janx/vim-rubytest'
 Plugin 'noahfrederick/Hemisu'
 Plugin 'ap/vim-css-color'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'ervandew/supertab'
 if has("lua")
 	Plugin 'Shougo/neocomplete.vim'
 else
 	Plugin 'Shougo/neocomplcache.vim'
 endif
 " I found neosnippet not quite used to as vim-snipmate
-"Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
 
 " For vim-snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -68,7 +69,6 @@ Plugin 'skalnik/vim-vroom'
 Plugin 'fatih/vim-go'
 
 "Python related stuff
-"Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'klen/python-mode'
 
 "JXML
@@ -200,10 +200,6 @@ vnoremap <C-G> :call PhpDocRange()<CR>
 " Ctrl-Q to toggle Taglist
 nnoremap <C-Q> :TlistToggle<CR>
 
-" Supertabs
-"let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
-
-
 " Syntastic
 "let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128'
@@ -213,9 +209,9 @@ let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128'
 if has("lua")
 	" NeoComplete
 	" disable AutoComplPop
-	let g:acp_enableAtStartup = 0
+	let g:acp_enableAtStartup = 1
 	let g:neocomplete#enable_at_startup = 1
-	let g:neocomplete#disable_auto_complete = 1
+	let g:neocomplete#disable_auto_complete = 0
 	let g:neocomplete#enable_auto_select = 0
 	let g:neocomplete#enable_smart_case = 1
 	let g:neocomplete#sources#syntax#min_keyword_length = 3
@@ -227,7 +223,7 @@ if has("lua")
 	"<CR>: close popup and save indent.
 	inoremap <expr><CR>  neocomplete#smart_close_popup() . "\<CR>"
 	"<TAB>: completion. NO USE with snipmate
-	"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+	inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 	"<C-h>, <BS>: close popup and delete backword char.
 	inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 	inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -274,7 +270,6 @@ else
 	endfunction"}}
 endif
 
-
 " RubyTest - change from <Leader>t to <Leader>\
 map <Leader>\ <Plug>RubyTestRun
 
@@ -285,13 +280,14 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=100
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 if executable('ag')
   "Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
   "Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
 endif
 
 " Tabman
@@ -324,6 +320,22 @@ set nobackup
 set nowritebackup
 
 " Neosnippet
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
@@ -343,6 +355,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType js set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
@@ -357,6 +370,7 @@ au FileType make setl noexpandtab
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile *.rb set ft=ruby
 
 " Map .twig files as jinja templates
 au BufRead,BufNewFile *.{twig}  set ft=htmljinja
