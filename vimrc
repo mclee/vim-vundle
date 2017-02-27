@@ -231,14 +231,6 @@ if has("lua")
 	inoremap <expr><C-e>  neocomplete#cancel_popup()
 	"inoremap <expr><Enter>  pumvisible() ? neocomplcache#close_popup()."\<C-n>" : "\<Enter>"
 	inoremap <expr><Enter>  pumvisible() ? "\<C-Y>" : "\<Enter>"
-
-	"autocomplete became too slow, so here's from the  website wiki: https://github.com/Shougo/neocomplcache.vim/wiki/neocomplcache-tips%3A
-	"Only process autocomplete on tab
-	inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
-	function! s:check_back_space()"{{{
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1] =~ '\s'
-	endfunction"}}
 else
 	" Use neocomplcache.
 	let g:acp_enableAtStartup = 0
@@ -261,13 +253,6 @@ else
 	inoremap <expr><C-e>  neocomplcache#cancel_popup()
 	"inoremap <expr><Enter>  pumvisible() ? neocomplcache#close_popup()."\<C-n>" : "\<Enter>"
 	inoremap <expr><Enter>  pumvisible() ? "\<C-Y>" : "\<Enter>"
-	"autocomplete became too slow, so here's from the  website wiki: https://github.com/Shougo/neocomplcache.vim/wiki/neocomplcache-tips%3A
-	"Only process autocomplete on tab
-	inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
-	function! s:check_back_space()"{{{
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1] =~ '\s'
-	endfunction"}}
 endif
 
 " RubyTest - change from <Leader>t to <Leader>\
@@ -341,6 +326,10 @@ endif
 let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+" use rails + ruby for 'ruby' type
+let g:neosnippet#scope_aliases = {}
+let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
+let g:neosnippet#scope_aliases['python'] = 'python,django'
 
 " python-mode
 let g:pymode_lint_ignore = 'W191,E101,E127,E128'
