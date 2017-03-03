@@ -74,6 +74,9 @@ Plugin 'klen/python-mode'
 "JXML
 Plugin 'git@github.com:zopim/vim-jxml.git'
 
+"React related
+Plugin 'MaxMEllon/vim-jsx-pretty'
+
 "PR Reviews
 Plugin 'junkblocker/patchreview-vim'
 Plugin 'codegram/vim-codereview'
@@ -154,8 +157,8 @@ set title
 "set noerrorbells
 
 " set folding
-"set foldmethod=syntax
-set foldmethod=indent
+set foldmethod=syntax
+"set foldmethod=indent
 set foldnestmax=2
 set foldlevel=1
 let ruby_fold = 0
