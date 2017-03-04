@@ -156,6 +156,9 @@ set title
 "set visualbell
 "set noerrorbells
 
+" Share Mac clipboard
+set clipboard=unnamed
+
 " set folding
 set foldmethod=syntax
 "set foldmethod=indent
