@@ -172,6 +172,9 @@ let php_folding = 1
 "http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
 set complete-=i
 
+" diable highlight temporarily
+map <Leader>h :nohlsearch<CR>
+
 " Status bar
 set laststatus=2
 "set statusline=%t\ %y\ format:\ %{&ff};\ [%l,%c]
