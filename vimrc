@@ -219,9 +219,9 @@ let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128'
 if has("lua")
 	" NeoComplete
 	" disable AutoComplPop
-	let g:acp_enableAtStartup = 1
+	let g:acp_enableAtStartup = 0
 	let g:neocomplete#enable_at_startup = 1
-	let g:neocomplete#disable_auto_complete = 0
+	let g:neocomplete#disable_auto_complete = 1
 	let g:neocomplete#enable_auto_select = 0
 	let g:neocomplete#enable_smart_case = 1
 	let g:neocomplete#sources#syntax#min_keyword_length = 3
