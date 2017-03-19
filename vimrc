@@ -175,6 +175,9 @@ set complete-=i
 " diable highlight temporarily
 map <Leader>h :nohlsearch<CR>
 
+" if opened file without sudo priv, use tee
+cmap w!! w !sudo tee % > /dev/null
+
 " Status bar
 set laststatus=2
 "set statusline=%t\ %y\ format:\ %{&ff};\ [%l,%c]
