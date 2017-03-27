@@ -278,7 +278,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=100
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_clear_cache_on_exit = 0
 if executable('ag')
   "Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
