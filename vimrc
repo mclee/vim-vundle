@@ -114,6 +114,9 @@ map <Leader>gcc :CodeReviewCommentChange<CR>
 map <Leader>gcr :CodeReviewComment<CR>
 map <Leader>glc :CodeReviewReloadComments<CR>
 
+" map something to search faster for current keyword
+map <Leader>ag yiw:Ag <C-R>0<CR>
+
 " Rspec.vim mappings
 "map <Leader>r :call RunCurrentSpecFile()<CR>
 "map <Leader>rn :call RunNearestSpec()<CR>
