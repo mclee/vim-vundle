@@ -207,6 +207,8 @@ let g:airline_theme='dark'
 " ruby path if you are using RVM
 " let g:ruby_path = system('rvm current')
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:syntastic_ruby_rubocop_exec = system('echo $HOME/.rbenv/shims/rubocop')
 
 " PHPDoc for Vim: PDV
 inoremap <C-G> <ESC>:call PhpDocSingle()<CR>i
