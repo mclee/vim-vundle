@@ -68,6 +68,7 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'skalnik/vim-vroom'
 "Plugin 'thoughtbot/vim-rspec'
 Plugin 'fatih/vim-go'
+Plugin 'rainerborene/vim-reek'
 
 "Python related stuff
 Plugin 'klen/python-mode'
