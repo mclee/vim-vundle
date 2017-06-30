@@ -211,6 +211,9 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_ruby_rubocop_exec = system('echo $HOME/.rbenv/shims/rubocop')
 
+" linters for javascript
+let g:syntastic_javascript_checkers = ['jshint', 'jsxhint', 'eslint']
+
 " PHPDoc for Vim: PDV
 inoremap <C-G> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-G> :call PhpDocSingle()<CR>
@@ -221,7 +224,7 @@ nnoremap <C-Q> :TlistToggle<CR>
 
 " Syntastic
 "let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128'
+let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128,C0103'
 
 " Neocomplete & neocomplcache
 
@@ -351,7 +354,7 @@ let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
 let g:neosnippet#scope_aliases['python'] = 'python,django'
 
 " python-mode
-let g:pymode_lint_ignore = 'W191,E101,E127,E128'
+let g:pymode_lint_ignore = 'W191,E101,E127,E128,C0103'
 map <Leader>pl :PymodeLint<CR>
 
 " Persistent undos
