@@ -224,7 +224,7 @@ nnoremap <C-Q> :TlistToggle<CR>
 
 " Syntastic
 "let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128,C0103,E501,E302'
+let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128,C0103'
 
 " Neocomplete & neocomplcache
 
@@ -354,7 +354,7 @@ let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
 let g:neosnippet#scope_aliases['python'] = 'python,django'
 
 " python-mode
-let g:pymode_lint_ignore = 'W191,E101,E127,E128,C0103,E501,E302'
+let g:pymode_lint_ignore = 'W191,E101,E127,E128,C0103'
 map <Leader>pl :PymodeLint<CR>
 
 " Persistent undos
