@@ -83,6 +83,10 @@ Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'junkblocker/patchreview-vim'
 Plugin 'codegram/vim-codereview'
 
+" fancy searchers
+Plugin 'junegunn/fzf'
+Plugin 'jremmen/vim-ripgrep'
+
 call vundle#end()
 
 " Auto NERDTree on startup
@@ -296,6 +300,9 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+" ripgrep
+let g:rg_binary = '/usr/local/bin/rg'
 
 " Tabman
 let g:tabman_toggle = '<leader>mt'
