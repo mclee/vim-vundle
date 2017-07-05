@@ -128,6 +128,9 @@ map <Leader>ag yiw:Ag <C-R>0<CR>
 "map <Leader>rl :call RunLastSpec()<CR>
 "map <Leader>ra :call RunAllSpecs()<CR>
 
+" FZF
+map <Leader>f :FZF<CR>
+
 syntax on
 set fileencodings=utf-8
 set fileencoding=utf-8
