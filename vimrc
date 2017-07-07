@@ -130,6 +130,7 @@ map <Leader>ag yiw:Ag <C-R>0<CR>
 
 " FZF
 map <Leader>f :FZF<CR>
+map <Leader>z :FZF<CR>
 
 syntax on
 set fileencodings=utf-8
