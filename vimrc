@@ -72,6 +72,7 @@ Plugin 'rainerborene/vim-reek'
 
 "Python related stuff
 Plugin 'klen/python-mode'
+Plugin 'davidhalter/jedi-vim'
 
 "JXML
 Plugin 'git@github.com:zopim/vim-jxml.git'
