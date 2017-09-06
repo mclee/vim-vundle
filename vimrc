@@ -72,7 +72,7 @@ Plugin 'rainerborene/vim-reek'
 
 "Python related stuff
 Plugin 'klen/python-mode'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 "JXML
 Plugin 'git@github.com:zopim/vim-jxml.git'
@@ -232,7 +232,7 @@ vnoremap <C-G> :call PhpDocRange()<CR>
 nnoremap <C-Q> :TlistToggle<CR>
 
 " Syntastic
-"let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128,C0103'
 
 " Neocomplete & neocomplcache
