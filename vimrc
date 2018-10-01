@@ -71,7 +71,7 @@ Plugin 'fatih/vim-go'
 Plugin 'rainerborene/vim-reek'
 
 "Python related stuff
-Plugin 'klen/python-mode'
+Plugin 'python-mode/python-mode'
 "Plugin 'davidhalter/jedi-vim'
 
 "JXML
@@ -86,6 +86,7 @@ Plugin 'codegram/vim-codereview'
 
 " fancy searchers
 Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'jremmen/vim-ripgrep'
 
 call vundle#end()
@@ -161,6 +162,7 @@ set softtabstop=4
 set noeol
 set shiftround
 set smarttab
+"set nofoldenable
 
 " Window settings
 set wrap
