@@ -85,6 +85,7 @@ Plugin 'junkblocker/patchreview-vim'
 Plugin 'codegram/vim-codereview'
 
 " fancy searchers
+set rtp+=~/.fzf
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jremmen/vim-ripgrep'
@@ -215,7 +216,6 @@ endif
 let g:airline_powerline_fonts=1
 let g:airline_theme='dark'
 
-
 " ruby path if you are using RVM
 " let g:ruby_path = system('rvm current')
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
@@ -236,6 +236,9 @@ nnoremap <C-Q> :TlistToggle<CR>
 " Syntastic
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128,C0103'
+
+" vim-multiple-cursors
+let g:multi_cursor_quit_key = '<Esc>'
 
 " Neocomplete & neocomplcache
 
