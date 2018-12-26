@@ -7,7 +7,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
@@ -16,9 +16,6 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'tpope/vim-rails'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-scripts/ZoomWin'
 Plugin 'tpope/vim-markdown'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-ragtag'
@@ -33,11 +30,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'othree/html5.vim'
-Plugin 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Plugin 'janx/vim-rubytest'
-Plugin 'noahfrederick/Hemisu'
 Plugin 'ap/vim-css-color'
-Plugin 'vim-scripts/matchit.zip'
+Plugin 'adelarsq/vim-matchit'
 if has("lua")
 	Plugin 'Shougo/neocomplete.vim'
 else
@@ -55,23 +50,24 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kien/tabman.vim'
-Plugin 'vim-scripts/nginx.vim'
+Plugin 'chr4/nginx.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-bundler'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Yggdroot/indentLine'
+Plugin 'Yggdroot/hiPairs'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'moll/vim-node'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'skalnik/vim-vroom'
-"Plugin 'thoughtbot/vim-rspec'
 Plugin 'fatih/vim-go'
 Plugin 'rainerborene/vim-reek'
 
 "Python related stuff
-Plugin 'python-mode/python-mode'
+"Plugin 'python-mode/python-mode'
+Plugin 'nvie/vim-flake8'
 "Plugin 'davidhalter/jedi-vim'
 
 "JXML
@@ -237,6 +233,9 @@ nnoremap <C-Q> :TlistToggle<CR>
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128,C0103'
 
+" Flake8
+let g:flake8_show_in_gutter=1
+
 " vim-multiple-cursors
 let g:multi_cursor_quit_key = '<Esc>'
 
@@ -334,7 +333,6 @@ highlight Search term=reverse ctermbg=4 ctermfg=7
 "let g:solarized_visibility='medium'
 "let g:solarized_contrast='normal'
 set background=dark
-"colorscheme solarized
 colorscheme vividchalk
 
 " Swap files. Generally things are in version control
@@ -388,8 +386,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
-" {{{ Filetypes
-"
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 
@@ -431,5 +427,3 @@ au FileType javascript setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 n
 
 " Coffeescript uses 2 spaces too.
 au FileType coffee setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab
-
-" }}}
