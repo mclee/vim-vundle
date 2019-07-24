@@ -50,6 +50,7 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kien/tabman.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'chr4/nginx.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-bundler'
@@ -63,10 +64,11 @@ Plugin 'moll/vim-node'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'skalnik/vim-vroom'
 Plugin 'fatih/vim-go'
+Plugin 'rust-lang/rust.vim'
 Plugin 'rainerborene/vim-reek'
 
 "Python related stuff
-"Plugin 'python-mode/python-mode'
+Plugin 'python-mode/python-mode'
 Plugin 'nvie/vim-flake8'
 "Plugin 'davidhalter/jedi-vim'
 
@@ -231,7 +233,7 @@ nnoremap <C-Q> :TlistToggle<CR>
 
 " Syntastic
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128,C0103'
+let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128,C0103,E117'
 
 " Flake8
 let g:flake8_show_in_gutter=1
@@ -369,7 +371,7 @@ let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
 let g:neosnippet#scope_aliases['python'] = 'python,django'
 
 " python-mode
-let g:pymode_lint_ignore = 'W191,E101,E127,E128,C0103'
+let g:pymode_lint_ignore = 'W191,E101,E127,E128,C0103,E117'
 map <Leader>pl :PymodeLint<CR>
 
 " Persistent undos
