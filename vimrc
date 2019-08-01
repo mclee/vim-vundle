@@ -102,6 +102,9 @@ map <F5> :TMFocus<CR>
 " Toggle Hex editing
 map <F8> :%!xxd<CR>
 map <F9> :%!xxd -r<CR>
+" Tagbar
+map <Leader>g :TagbarToggle<CR>
+
 " vim-rails
 map <Leader>rp :Rextract 
 map <Leader>rm :Emodel<CR>
@@ -132,6 +135,9 @@ map <Leader>ag yiw:Ag <C-R>0<CR>
 " FZF
 map <Leader>f :FZF<CR>
 map <Leader>z :FZF<CR>
+
+" Rust
+map <Leader>rf :RustFmt<CR>
 
 syntax on
 set fileencodings=utf-8
@@ -240,6 +246,9 @@ let g:flake8_show_in_gutter=1
 
 " vim-multiple-cursors
 let g:multi_cursor_quit_key = '<Esc>'
+
+" rust.vim autosave into RustFmt
+let g:rustfmt_autosave = 1
 
 " Neocomplete & neocomplcache
 
