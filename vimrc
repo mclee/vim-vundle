@@ -1,94 +1,94 @@
 set nocompatible
 filetype off
 
-" vundle
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle
-" required! 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'tpope/vim-vividchalk'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-markdown'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-haml'
-Plugin 'slim-template/vim-slim'
-Plugin 'tpope/vim-git'
-Plugin 'Townk/vim-autoclose'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'othree/html5.vim'
-Plugin 'janx/vim-rubytest'
-Plugin 'ap/vim-css-color'
-Plugin 'adelarsq/vim-matchit'
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-vividchalk'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-markdown'
+Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-haml'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-git'
+Plug 'Townk/vim-autoclose'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-syntastic/syntastic'
+Plug 'othree/html5.vim'
+Plug 'janx/vim-rubytest'
+Plug 'ap/vim-css-color'
+Plug 'adelarsq/vim-matchit'
 if has("lua")
-	Plugin 'Shougo/neocomplete.vim'
+	Plug 'Shougo/neocomplete.vim'
 else
-	Plugin 'Shougo/neocomplcache.vim'
+	Plug 'Shougo/neocomplcache.vim'
 endif
 " I found neosnippet not quite used to as vim-snipmate
-Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 " For vim-snipmate
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+"Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'tomtom/tlib_vim'
+"Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'kien/tabman.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'chr4/nginx.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'tpope/vim-bundler'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Yggdroot/indentLine'
-Plugin 'Yggdroot/hiPairs'
-Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'moll/vim-node'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'skalnik/vim-vroom'
-Plugin 'fatih/vim-go'
-Plugin 'rust-lang/rust.vim'
-Plugin 'rainerborene/vim-reek'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'kien/tabman.vim'
+Plug 'majutsushi/tagbar'
+Plug 'chr4/nginx.vim'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-bundler'
+Plug 'airblade/vim-gitgutter'
+Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/hiPairs'
+Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'moll/vim-node'
+Plug 'digitaltoad/vim-pug'
+Plug 'skalnik/vim-vroom'
+Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
+Plug 'rainerborene/vim-reek'
 
 "Python related stuff
-Plugin 'python-mode/python-mode'
-Plugin 'nvie/vim-flake8'
-"Plugin 'davidhalter/jedi-vim'
+Plug 'python-mode/python-mode'
+Plug 'nvie/vim-flake8'
+"Plug 'davidhalter/jedi-vim'
 
 "JXML
-Plugin 'git@github.com:zopim/vim-jxml.git'
+Plug 'git@github.com:zopim/vim-jxml.git'
 
 "React related
-Plugin 'MaxMEllon/vim-jsx-pretty'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 "PR Reviews
-Plugin 'junkblocker/patchreview-vim'
-Plugin 'codegram/vim-codereview'
+Plug 'junkblocker/patchreview-vim'
+Plug 'codegram/vim-codereview'
 
 " fancy searchers
 set rtp+=~/.fzf
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep'
 
-call vundle#end()
+call plug#end()
 
 " Auto NERDTree on startup
 "autocmd vimenter * NERDTree
