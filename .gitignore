@@ -1,2 +1,5 @@
 bundle/
 backup/
+autoload/
+plugged/
+site
