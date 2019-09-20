@@ -37,6 +37,7 @@ Plug 'othree/html5.vim'
 Plug 'janx/vim-rubytest'
 Plug 'ap/vim-css-color'
 Plug 'adelarsq/vim-matchit'
+Plug 'ervandew/supertab'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -44,14 +45,11 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-" I found neosnippet not quite used to as vim-snipmate
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 
 " For vim-snipmate
-"Plug 'MarcWeber/vim-addon-mw-utils'
-"Plug 'tomtom/tlib_vim'
-"Plug 'garbas/vim-snipmate'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
 Plug 'ctrlpvim/ctrlp.vim'
@@ -70,12 +68,16 @@ Plug 'moll/vim-node'
 Plug 'digitaltoad/vim-pug'
 Plug 'skalnik/vim-vroom'
 Plug 'fatih/vim-go'
-Plug 'rust-lang/rust.vim'
 Plug 'rainerborene/vim-reek'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+Plug 'sebastianmarkow/deoplete-rust'
 
 "Python related stuff
 Plug 'python-mode/python-mode'
 Plug 'nvie/vim-flake8'
+Plug 'deoplete-plugins/deoplete-jedi'
 "Plug 'davidhalter/jedi-vim'
 
 "JXML
@@ -310,32 +312,10 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-" Neosnippet
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-" use rails + ruby for 'ruby' type
-let g:neosnippet#scope_aliases = {}
-let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
-let g:neosnippet#scope_aliases['python'] = 'python,django'
 
 " python-mode
 let g:pymode_lint_ignore = 'W191,E101,E127,E128,C0103,E117'
