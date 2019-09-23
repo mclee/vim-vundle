@@ -96,7 +96,7 @@ Plug 'codegram/vim-codereview'
 set rtp+=~/.fzf
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep'
+"Plug 'jremmen/vim-ripgrep'
 
 call plug#end()
 
@@ -135,6 +135,7 @@ map <Leader>glc :CodeReviewReloadComments<CR>
 
 " map something to search faster for current keyword
 map <Leader>ag yiw:Ag <C-R>0<CR>
+map <Leader>rg yiw:Rg <C-R>0<CR>
 
 " Rspec.vim mappings
 "map <Leader>r :call RunCurrentSpecFile()<CR>
@@ -274,17 +275,18 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=100
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 0
-if executable('ag')
+if executable('rg')
   "Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=rg\ --color=never
 
-  "Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  "Use rg in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
 
 " ripgrep
 let g:rg_binary = '/usr/local/bin/rg'
+let g:rg_highlight = 'true'
 
 " Tabman
 let g:tabman_toggle = '<leader>mt'
