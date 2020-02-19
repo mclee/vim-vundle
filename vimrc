@@ -96,7 +96,7 @@ Plug 'codegram/vim-codereview'
 set rtp+=~/.fzf
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-"Plug 'jremmen/vim-ripgrep'
+Plug 'jremmen/vim-ripgrep'
 
 call plug#end()
 
