@@ -40,13 +40,10 @@ Plug 'janx/vim-rubytest'
 Plug 'ap/vim-css-color'
 Plug 'adelarsq/vim-matchit'
 Plug 'ervandew/supertab'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 
 " For vim-snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -73,12 +70,10 @@ Plug 'rainerborene/vim-reek'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-Plug 'sebastianmarkow/deoplete-rust'
 
 "Python related stuff
 Plug 'python-mode/python-mode'
 Plug 'nvie/vim-flake8'
-Plug 'deoplete-plugins/deoplete-jedi'
 "Plug 'davidhalter/jedi-vim'
 
 "JXML
@@ -137,6 +132,13 @@ map <Leader>glc :CodeReviewReloadComments<CR>
 map <Leader>ag yiw:Ag <C-R>0<CR>
 map <Leader>rg yiw:Rg <C-R>0<CR>
 
+" telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>flg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fgf <cmd>Telescope git_files<cr>
+nnoremap <leader>fb <cmd>Telescope file_browser<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 " Rspec.vim mappings
 "map <Leader>r :call RunCurrentSpecFile()<CR>
 "map <Leader>rn :call RunNearestSpec()<CR>
@@ -144,7 +146,6 @@ map <Leader>rg yiw:Rg <C-R>0<CR>
 "map <Leader>ra :call RunAllSpecs()<CR>
 
 " FZF
-map <Leader>f :FZF<CR>
 map <Leader>z :FZF<CR>
 
 " Rust
@@ -234,20 +235,6 @@ cmap w!! w !sudo tee % > /dev/null
 set laststatus=2
 "set statusline=%t\ %y\ format:\ %{&ff};\ [%l,%c]
 
-" Fancy Powerlines
-"let g:Powerline_symbols = 'unicode'
-let g:Powerline_symbols = 'fancy'
-
-" fix powerline lag: https://powerline.readthedocs.org/en/latest/tipstricks.html
-if ! has('gui_running')
-	set ttimeoutlen=10
-	augroup FastEscape
-		autocmd!
-		au InsertEnter * set timeoutlen=0
-		au InsertLeave * set timeoutlen=1000
-	augroup END
-endif
-
 " let airline use powerline fancy fonts
 let g:airline_powerline_fonts=1
 let g:airline_theme='dark'
@@ -281,9 +268,6 @@ let g:multi_cursor_quit_key = '<Esc>'
 
 " rust.vim autosave into RustFmt
 let g:rustfmt_autosave = 1
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
 
 " RubyTest - change from <Leader>t to <Leader>\
 map <Leader>\ <Plug>RubyTestRun
