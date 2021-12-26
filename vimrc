@@ -13,10 +13,9 @@ let g:python_host_prog = '/usr/local/var/pyenv/shims/python2'
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
+Plug 'f-person/git-blame.nvim'
 Plug 'pangloss/vim-javascript'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-vividchalk'
 Plug 'tpope/vim-rails'
@@ -27,7 +26,6 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-git'
 Plug 'Townk/vim-autoclose'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -101,6 +99,10 @@ call plug#end()
 " Toggle CHADTree with \n
 map <Leader>n :CHADopen<CR>
 map <F3> :CHADopen<CR>
+
+" Toggle git-blame.nvim
+nnoremap <F4> <CMD>GitBlameToggle<CR>
+let g:gitblame_enabled = 0
 
 map <Leader>te :tabe<CR>
 
