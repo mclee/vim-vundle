@@ -81,8 +81,7 @@ Plug 'git@github.com:zopim/vim-jxml.git'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
 "PR Reviews
-Plug 'junkblocker/patchreview-vim'
-Plug 'codegram/vim-codereview'
+Plug 'sindrets/diffview.nvim'
 
 " fancy searchers
 set rtp+=~/.fzf
@@ -124,11 +123,11 @@ map <Leader>t :CtrlP<CR>
 map <Leader>cp :CtrlPClearAllCaches<CR>
 map <Leader>ct :CtrlPClearAllCaches<CR>
 
-" Github code review stuff
-map <Leader>gr :CodeReview
-map <Leader>gcc :CodeReviewCommentChange<CR>
-map <Leader>gcr :CodeReviewComment<CR>
-map <Leader>glc :CodeReviewReloadComments<CR>
+" code review stuff
+nnoremap <Leader>do <CMD>DiffviewOpen<CR>
+nnoremap <Leader>dc <CMD>DiffviewClose<CR>
+nnoremap <Leader>dtf <CMD>DiffToggleFiles<CR>
+nnoremap <Leader>dff <CMD>DiffviewFocusFiles<CR>
 
 " map something to search faster for current keyword
 map <Leader>ag yiw:Ag <C-R>0<CR>
