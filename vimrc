@@ -14,7 +14,7 @@ let g:python_host_prog = '/usr/local/var/pyenv/shims/python2'
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/nerdtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
@@ -100,14 +100,12 @@ Plug 'jremmen/vim-ripgrep'
 " barbar
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
+
 call plug#end()
 
-" Auto NERDTree on startup
-"autocmd vimenter * NERDTree
-
-" Toggle NERDTree with \n
-map <Leader>n :NERDTreeToggle<CR>
-map <F3> :NERDTreeToggle<CR>
+" Toggle CHADTree with \n
+map <Leader>n :CHADopen<CR>
+map <F3> :CHADopen<CR>
 
 map <Leader>te :tabe<CR>
 
