@@ -55,7 +55,6 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'kien/tabman.vim'
 Plug 'majutsushi/tagbar'
 Plug 'chr4/nginx.vim'
 Plug 'mattn/emmet-vim'
@@ -98,6 +97,9 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 
+" barbar
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
 call plug#end()
 
 " Auto NERDTree on startup
@@ -106,9 +108,9 @@ call plug#end()
 " Toggle NERDTree with \n
 map <Leader>n :NERDTreeToggle<CR>
 map <F3> :NERDTreeToggle<CR>
-" Tabman
-map <F4> :TMToggle<CR>
-map <F5> :TMFocus<CR>
+
+map <Leader>te :tabe<CR>
+
 " Toggle Hex editing
 map <F8> :%!xxd<CR>
 map <F9> :%!xxd -r<CR>
@@ -149,6 +151,27 @@ map <Leader>z :FZF<CR>
 
 " Rust
 map <Leader>rf :RustFmt<CR>
+
+" barbar.nvim
+" Move to previous/next
+nnoremap <Leader>, :BufferPrevious<CR>
+nnoremap <Leader>. :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <Leader>t< :BufferMovePrevious<CR>
+nnoremap <Leader>t> :BufferMoveNext<CR>
+nnoremap <Leader>t1 :BufferGoto 1<CR>
+nnoremap <Leader>t2 :BufferGoto 2<CR>
+nnoremap <Leader>t3 :BufferGoto 3<CR>
+nnoremap <Leader>t4 :BufferGoto 4<CR>
+nnoremap <Leader>t5 :BufferGoto 5<CR>
+nnoremap <Leader>t6 :BufferGoto 6<CR>
+nnoremap <Leader>t7 :BufferGoto 7<CR>
+nnoremap <Leader>t8 :BufferGoto 8<CR>
+nnoremap <Leader>t9 :BufferLast<CR>
+" Pin/unpin buffer
+nnoremap <Leader>tp :BufferPin<CR>
+" Close buffer
+nnoremap <Leader>tc :BufferClose<CR>
 
 syntax on
 set fileencodings=utf-8
@@ -287,12 +310,6 @@ endif
 " ripgrep
 let g:rg_binary = '/usr/local/bin/rg'
 let g:rg_highlight = 'true'
-
-" Tabman
-let g:tabman_toggle = '<leader>mt'
-let g:tabman_focus  = '<leader>mf'
-let g:tabman_width = 25
-let g:tabman_side = 'left'
 
 " Gitgutter
 let g:gitgutter_eager = 0
