@@ -33,6 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 Plug 'othree/html5.vim'
 Plug 'janx/vim-rubytest'
 Plug 'ap/vim-css-color'
@@ -101,7 +102,7 @@ map <F3> :CHADopen<CR>
 
 " Toggle git-blame.nvim
 nnoremap <F4> <CMD>GitBlameToggle<CR>
-let g:gitblame_enabled = 0
+let g:gitblame_enabled = 1
 
 map <Leader>te :tabe<CR>
 
@@ -124,7 +125,7 @@ map <Leader>cp :CtrlPClearAllCaches<CR>
 map <Leader>ct :CtrlPClearAllCaches<CR>
 
 " code review stuff
-nnoremap <Leader>do <CMD>DiffviewOpen<CR>
+cnoreabbrev cdiff DiffviewOpen
 nnoremap <Leader>dc <CMD>DiffviewClose<CR>
 nnoremap <Leader>dtf <CMD>DiffToggleFiles<CR>
 nnoremap <Leader>dff <CMD>DiffviewFocusFiles<CR>
@@ -245,6 +246,12 @@ let g:airline_theme='dark'
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_ruby_rubocop_exec = system('echo $HOME/.rbenv/shims/rubocop')
+
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\   'python': ['flake8'],
+\   'javascript': ['eslint'],
+\}
 
 " linters for javascript
 let g:syntastic_javascript_checkers = ['jshint', 'jsxhint', 'eslint']
