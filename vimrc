@@ -137,6 +137,7 @@ map <Leader>rg yiw:Rg <C-R>0<CR>
 " telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>flg <cmd>Telescope live_grep<cr>
+nnoremap <leader>frg yiw<cmd>Telescope live_grep<cr><c-r>0<cr>
 nnoremap <leader>fgf <cmd>Telescope git_files<cr>
 nnoremap <leader>fb <cmd>Telescope file_browser<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -222,6 +223,9 @@ set foldnestmax=2
 set foldlevel=1
 let ruby_fold = 0
 let php_folding = 1
+
+"don't use the old regex
+set re=0
 
 "don't search for include files for completion
 "http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
