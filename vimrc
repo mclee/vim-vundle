@@ -302,7 +302,7 @@ if executable('rg')
 endif
 
 " ripgrep
-let g:rg_binary = '/usr/local/bin/rg'
+let g:rg_binary = '/opt/homebrew/bin/rg'
 let g:rg_highlight = 'true'
 
 " Gitgutter
