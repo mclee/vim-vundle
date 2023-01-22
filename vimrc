@@ -194,6 +194,7 @@ set showmatch
 set history=200
 set undolevels=200
 set pastetoggle=<F2>
+set mouse="" "disable mouse support"
 
 " Whitespace stuff
 set tabstop=4
