@@ -42,7 +42,6 @@ Plug 'ervandew/supertab'
 " telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 
 " For vim-snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'
