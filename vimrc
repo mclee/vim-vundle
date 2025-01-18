@@ -74,9 +74,6 @@ Plug 'python-mode/python-mode'
 Plug 'nvie/vim-flake8'
 "Plug 'davidhalter/jedi-vim'
 
-"JXML
-Plug 'git@github.com:zopim/vim-jxml.git'
-
 "React related
 Plug 'MaxMEllon/vim-jsx-pretty'
 
