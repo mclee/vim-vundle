@@ -16,7 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'f-person/git-blame.nvim'
 Plug 'pangloss/vim-javascript'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-vividchalk'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-markdown'
@@ -65,6 +65,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'skalnik/vim-vroom'
 Plug 'fatih/vim-go'
 Plug 'rainerborene/vim-reek'
+Plug 'github/copilot.vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -87,8 +88,20 @@ Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 
 " barbar
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
+
+" Dependency for Avante
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'stevearc/dressing.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'MeanderingProgrammer/render-markdown.nvim'
+
+" Optional dependency for Avante
+Plug 'hrsh7th/nvim-cmp'
+Plug 'HakonHarnes/img-clip.nvim'
+
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 call plug#end()
 
@@ -388,3 +401,24 @@ au FileType javascript setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 n
 
 " Coffeescript uses 2 spaces too.
 au FileType coffee setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab
+
+" Avante setup
+lua << EOF
+require('avante_lib').load()
+local opts = {
+	provider = "ollama",
+	ollama = {
+		-- model = "deepseek-r1:latest",
+		-- model = "qwen3:latest",
+		model = "deepseek-r1:latest",
+		max_completion_tokens = 65535,
+	},
+}
+local avante = require('avante')
+avante.setup(opts)
+
+
+require('render-markdown').setup({
+    file_types = { 'markdown', 'Avante' },
+})
+EOF
