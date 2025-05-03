@@ -38,10 +38,17 @@ Plug 'othree/html5.vim'
 Plug 'janx/vim-rubytest'
 Plug 'ap/vim-css-color'
 Plug 'adelarsq/vim-matchit'
-Plug 'ervandew/supertab'
 " telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+" For nvim-cmp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 
 " For vim-snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -59,7 +66,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'Yggdroot/hiPairs'
 Plug 'mileszs/ack.vim'
 Plug 'rking/ag.vim'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 Plug 'moll/vim-node'
 Plug 'digitaltoad/vim-pug'
 Plug 'skalnik/vim-vroom'
@@ -98,7 +105,6 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 " Optional dependency for Avante
-Plug 'hrsh7th/nvim-cmp'
 Plug 'HakonHarnes/img-clip.nvim'
 
 Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
@@ -183,12 +189,14 @@ nnoremap <Leader>t9 :BufferLast<CR>
 nnoremap <Leader>tp :BufferPin<CR>
 " Close buffer
 nnoremap <Leader>tc :BufferClose<CR>
+" replace pastetoggle
+nnoremap <silent> <F2> :set paste!<cr>
+inoremap <silent> <F2> <esc>:set paste!<cr>i
 
 syntax on
 set fileencodings=utf-8
 set fileencoding=utf-8
 set encoding=utf-8
-set tenc=utf-8
 set ruler
 set number
 set incsearch
@@ -202,7 +210,6 @@ set copyindent
 set showmatch
 set history=200
 set undolevels=200
-set pastetoggle=<F2>
 set mouse="" "disable mouse support"
 
 " Whitespace stuff
