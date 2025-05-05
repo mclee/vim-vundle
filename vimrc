@@ -101,6 +101,9 @@ Plug 'romgrk/barbar.nvim'
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
 
+" Avante
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+
 " Dependency for Avante
 Plug 'stevearc/dressing.nvim'
 Plug 'MunifTanjim/nui.nvim'
@@ -108,8 +111,6 @@ Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 " Optional dependency for Avante
 Plug 'HakonHarnes/img-clip.nvim'
-
-Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 call plug#end()
 
