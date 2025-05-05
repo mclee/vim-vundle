@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'f-person/git-blame.nvim'
 Plug 'pangloss/vim-javascript'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+Plug 'nvim-tree/nvim-tree.lua'
 "Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-vividchalk'
 Plug 'tpope/vim-rails'
@@ -113,9 +113,9 @@ Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 call plug#end()
 
-" Toggle CHADTree with \n
-map <Leader>n :CHADopen<CR>
-map <F3> :CHADopen<CR>
+" Toggle nvim-tree with \n
+map <Leader>n :NvimTreeToggle<CR>
+map <F3> :NvimTreeFocus<CR>
 
 " Toggle git-blame.nvim
 nnoremap <F4> <CMD>GitBlameToggle<CR>
@@ -259,6 +259,10 @@ cmap w!! w !sudo tee % > /dev/null
 " Status bar
 set laststatus=2
 "set statusline=%t\ %y\ format:\ %{&ff};\ [%l,%c]
+
+" nvim-tree
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
 
 " let airline use powerline fancy fonts
 let g:airline_powerline_fonts=1
@@ -457,4 +461,24 @@ require'nvim-treesitter.configs'.setup {
 		additional_vim_regex_highlighting = false,
 	},
 }
+
+-- nvim-tree
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
 EOF
