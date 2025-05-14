@@ -13,16 +13,14 @@ let g:python_host_prog = '/usr/local/var/pyenv/shims/python'
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
 Plug 'f-person/git-blame.nvim'
 Plug 'pangloss/vim-javascript'
 Plug 'nvim-tree/nvim-tree.lua'
 "Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-vividchalk'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-tbone'
-Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
@@ -31,13 +29,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-syntastic/syntastic'
+Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
 Plug 'othree/html5.vim'
-Plug 'janx/vim-rubytest'
 Plug 'ap/vim-css-color'
 Plug 'adelarsq/vim-matchit'
+Plug 'chrisbra/csv.vim'
 " telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -57,7 +54,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 Plug 'chr4/nginx.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-bundler'
@@ -69,18 +66,17 @@ Plug 'rking/ag.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'moll/vim-node'
 Plug 'digitaltoad/vim-pug'
-Plug 'skalnik/vim-vroom'
 Plug 'fatih/vim-go'
-Plug 'rainerborene/vim-reek'
+Plug 'rust-lang/rust.vim'
 Plug 'github/copilot.vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
 
 "Python related stuff
-Plug 'python-mode/python-mode'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'nvie/vim-flake8'
-"Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
 "React related
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -117,6 +113,7 @@ call plug#end()
 " Toggle nvim-tree with \n
 map <Leader>n :NvimTreeToggle<CR>
 map <F3> :NvimTreeFocus<CR>
+nnoremap <Leader><C-F> :NvimTreeFindFile<CR>
 
 " Toggle git-blame.nvim
 nnoremap <F4> <CMD>GitBlameToggle<CR>
@@ -272,17 +269,12 @@ let g:airline_theme='dark'
 " ruby path if you are using RVM
 " let g:ruby_path = system('rvm current')
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-let g:syntastic_ruby_rubocop_exec = system('echo $HOME/.rbenv/shims/rubocop')
 
 let g:ale_linters = {
 \   'ruby': ['rubocop'],
 \   'python': ['flake8'],
 \   'javascript': ['eslint'],
 \}
-
-" linters for javascript
-let g:syntastic_javascript_checkers = ['jshint', 'jsxhint', 'eslint']
 
 " PHPDoc for Vim: PDV
 inoremap <C-G> <ESC>:call PhpDocSingle()<CR>i
@@ -291,10 +283,6 @@ vnoremap <C-G> :call PhpDocRange()<CR>
 
 " Ctrl-Q to toggle Taglist
 nnoremap <C-Q> :TlistToggle<CR>
-
-" Syntastic
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=W191,E101,E127,E128,C0103,E117'
 
 " Flake8
 let g:flake8_show_in_gutter=1
@@ -427,6 +415,9 @@ local opts = {
 		-- model = "qwen3:latest",
 		model = "deepseek-r1:latest",
 		max_completion_tokens = 65535,
+	},
+	behaviour = {
+		enable_cursor_planning_mode = true,
 	},
 }
 local avante = require('avante')
